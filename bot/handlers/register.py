@@ -2,22 +2,22 @@ import logging
 
 from aiogram import Router, F
 from aiogram.filters import CommandStart
+from aiogram.fsm.context import FSMContext
 from aiogram.types import Message
 from asgiref.sync import sync_to_async
-
+from aiogram.filters import Command
 # from bot.models import UserImage
 
 logger = logging.getLogger(__name__)
 router = Router()
 
 
-@router.message(CommandStart())
-async def cmd_start(message: Message):
-    await message.answer(
-        "👋 Hello! Bot is working! 🎉\n\n"
-        "📸 Send me an image and I'll save its file_id to the database.",
-        parse_mode=None  # Override the default parse mode
-    )
+@router.message(Command('start'))
+async def start_handler(message: Message, state: FSMContext):
+    text = "Assalomu alaykum! Les Ailes yetkazib berish xizmatiga xush kelibsiz.\nHello! Welcome to Les Ailes delivery service."
+    await message.answer(text=text)
+
+
 #
 #
 # @router.message(F.photo)
