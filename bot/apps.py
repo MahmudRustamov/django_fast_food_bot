@@ -20,5 +20,8 @@ class BotConfig(AppConfig):
             BotConfig.bot = Bot(token=settings.TELEGRAM_BOT_TOKEN)
             BotConfig.dp = Dispatcher()
 
-            from bot.handlers import register
+            from bot.handlers import register,orders, bot_settings, contacts
             BotConfig.dp.include_router(register.router)
+            BotConfig.dp.include_router(orders.router)
+            BotConfig.dp.include_router(bot_settings.router)
+            BotConfig.dp.include_router(contacts.router)
