@@ -209,8 +209,8 @@ delivery_uz = ReplyKeyboardMarkup(
 user_settings_en = ReplyKeyboardMarkup(
     keyboard=[
         [KeyboardButton(text="Change name"), KeyboardButton(text="📱Change number")],
-        [KeyboardButton(text="🏙Change city"), KeyboardButton(text="🇬🇧Change language")],
-        [KeyboardButton(text="ℹ️Branch information"), KeyboardButton(text="📄Public offer")],
+        [KeyboardButton(text="🏙 Change city"), KeyboardButton(text="🇬🇧 Change language")],
+        [KeyboardButton(text="ℹ️ Branch information"), KeyboardButton(text=" 📄Public offer")],
         [KeyboardButton(text="⬅️ Back")]
     ],
     resize_keyboard=True

@@ -2,7 +2,9 @@ import logging
 
 from aiogram import Bot, Dispatcher
 from django.apps import AppConfig
-from django.conf import settings
+
+
+from core import config
 
 logger = logging.getLogger(__name__)
 
@@ -17,7 +19,7 @@ class BotConfig(AppConfig):
     def ready(self):
         """Initialize bot and dispatcher when Django starts"""
         if not BotConfig.bot:
-            BotConfig.bot = Bot(token=settings.TELEGRAM_BOT_TOKEN)
+            BotConfig.bot = Bot(token=config.TELEGRAM_BOT_TOKEN)
             BotConfig.dp = Dispatcher()
 
             from bot.handlers import register,orders, bot_settings, contacts
